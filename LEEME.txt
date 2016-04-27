@@ -1,0 +1,13 @@
+Este ejemplo ha sido realizado por Anexsoft
+
+- El usuario por defecto es
+  user: eduardo@anexsoft
+  pass: 123456
+
+- Levanten el script de la base de datos previamente y configura la cadena de conexión en el archivo .dev
+
+Web:
+http://anexsoft.com
+
+Publicación:
+http://anexsoft.com/p/136/mini-curso-de-laravel-5-creando-un-blog
