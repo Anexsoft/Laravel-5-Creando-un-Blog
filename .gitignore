@@ -28,6 +28,9 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
+# Uploads path
+proyecto/public/uploads/*
+
 # Thumbnails
 ._*
 

@@ -12,4 +12,15 @@ class Blog extends Model
     {
         return $this->belongsTo('App\Categoria');
     }
+    
+    public function documentos()
+    {
+        return $this->hasMany('App\Documento');
+    }
+    
+    public function getTotalDocumentosAttribute($value)
+    {
+        return $this->documentos()
+                    ->count();
+    }
 }

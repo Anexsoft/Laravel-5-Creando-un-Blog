@@ -142,9 +142,15 @@
 <script id="documentos" type="text/x-handlebars-template">
  @{{#data}}
       <li class="list-group-item">
-        <a href="{{url('uploads')}}/@{{archivo}}" target="_blank">
-            @{{ nombre }}
-        </a>
+        @{{ nombre }}
+        <div class="pull-right">
+            <a class="btn btn-xs btn-default" href="{{url('uploads')}}/@{{archivo}}" target="_blank">
+                Descargar
+            </a>
+            <button type="button" class="btn btn-danger btn-xs btn-eliminar-documento" value="@{{id}}">
+                Eliminar
+            </button>
+        </div>
       </li>
   @{{/data}}
 </script>
@@ -166,6 +172,18 @@
             });
 
             return false;
+        })
+        
+        $("#adjuntos").on('click', '.btn-eliminar-documento', function(){
+            if(!confirm('Esta seguro de eliminar este documento adjunto?')) return;
+            
+            var obj = $(this);
+            
+            $.post('{{ url('blog/documentoeliminar') }}/' + obj.val(), {
+                _token: '{{ csrf_token() }}'
+            }, function(r){
+                documentos();
+            });
         })
     })
     

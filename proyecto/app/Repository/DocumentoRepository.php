@@ -31,6 +31,10 @@ class DocumentoRepository
     }
     
     public function eliminar($id) {
+        /*
+            Traigan el registro, y e elimine fisicamente el archivo
+        */
+        
         Documento::destroy($id);
     }
 }

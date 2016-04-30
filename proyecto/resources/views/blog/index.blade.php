@@ -13,6 +13,7 @@
     <tr>
         <th>Nombre</th>
         <th>Descripcion</th>
+        <th style="width:60px;">Documentos</th>
         <th style="width:100px;">Creado</th>
         <th style="width:100px;">Actualizado</th>
         <th style="width:160px;"></th>
@@ -33,6 +34,7 @@
                 @endif
             </td>
             <td>{{ $m->descripcion }}</td>
+            <td>{{ $m->totalDocumentos }}</td>
             <td>{{ $m->created_at }}</td>
             <td>{{ $m->updated_at }}</td>
             <td class="text-center">

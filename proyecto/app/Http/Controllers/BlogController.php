@@ -76,4 +76,10 @@ class BlogController extends Controller {
     {
         return $this->docRepo->listar($blog_id);
     }
+    
+    
+    public function postDocumentoeliminar($id)
+    {
+        $this->docRepo->eliminar($id);
+    }
 }

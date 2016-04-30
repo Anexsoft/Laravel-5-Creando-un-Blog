@@ -20,6 +20,21 @@
 <h3>Habilitado</h3>
 <p>{{ $model->habilitado == 1 ? 'Si' : 'No' }}</p>
 
+<h3>Documentos</h3>
+<ul class="list-group">
+@forelse ($model->documentos as $d)
+    <li class="list-group-item">
+        <a target="_blank" href="{{ url('upload/' . $d->archivo ) }}">
+            {{ $d->nombre }}
+        </a>
+    </li>
+@empty
+    <li class="list-group-item">
+        No hay documentos adjuntos
+    </li>
+@endforelse
+</ul>
+
 <div class="well well-sm">
     <b>Creado:</b> {{ $model->created_at }}
     <b>Actualizado:</b> {{ $model->updated_at }}
